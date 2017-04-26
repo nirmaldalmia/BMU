@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include<iostream>
+#include <string.h>
+using namespace std;
+void encrypt(char password[],int key)
+{
+    unsigned int i;
+    for(i=0;i<strlen(password);++i)
+    
+        password[i] = password[i] - key - i;
+    
+}
+
+void decrypt(char password[],int key)
+{
+    unsigned int i;
+    for(i=0;i<strlen(password);++i)
+    
+        password[i] = password[i] + key + i;
+    
+}
+int main()
+{
+    char password[20];
+    printf("Enter the plaintext: \n");
+	//scanf("%s",password);
+	cin >> password;
+    char choice;
+   cout<<"Your text is:" << password << "\nEnter e for encryption or d for decryption.";
+    //scanf("%c",&choice);
+    //scanf("%c",&choice);
+    cin >> choice;
+	int a;
+	cout << "Enter the key\n";
+	cin >> a;
+    switch(choice)
+    {
+    	case 'e':
+    	encrypt(password,a);
+    	cout << "Encrypted Ciphertext = " << password << "\n";
+		break;
+		case 'd':
+		decrypt(password,a);
+    	cout << "Decrypted text = " << password << "\n";
+    	break;
+	
+	}
+}
+
+
+

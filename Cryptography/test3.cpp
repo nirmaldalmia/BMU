@@ -30,7 +30,7 @@ int main()
     scanf("%s",a);
     int j,b=0;
     for(j=0;j<strlen(password);j++)
-    b=(b+a[j])%255;
+    b=(b+a[j])%26;
     encrypt(password,b,enc);
     printf("Encrypted value = %s\n",enc);
     decrypt(password,b);
